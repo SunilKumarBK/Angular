@@ -53,7 +53,7 @@ func dataHandler(w http.ResponseWriter, r *http.Request) {
             e.FatherName, e.EmergencyContact, e.DateOfBirth, e.Address, e.Experience,
             p.CompanyName, p.position, p.startDate, p.endDate, p.duration
         FROM emply e
-         JOIN prevcompany p ON e.empId = p.empId`) 
+          JOIN prevcompany p ON e.empId = p.empId`) 
     if err != nil {
         log.Printf("Error executing query: %v", err)
         http.Error(w, err.Error(), http.StatusInternalServerError)
